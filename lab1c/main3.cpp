@@ -18,6 +18,7 @@ int x = 10,y = 10,r=0;
 __fastcall TForm1::TForm1(TComponent* Owner)
         : TForm(Owner)
 {
+        Edit1->Text = "--|--|--|--|--|--";
         Timer2->Enabled=false;
         x = PaintBox1->Width - 50;
         y = PaintBox1->Height/2;
@@ -25,35 +26,24 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 }
 //---------------------------------------------------------------------------
 
-int width, height;
+int width, height, flag = 0;
 
 void __fastcall TForm1::Button1Click(TObject *Sender)
 {
-        PaintBox1->Repaint();
-        PaintBox1->Canvas->Pen->Color = clRed;
         width = Form1->PaintBox1->Width;
         height = Form1->PaintBox1->Height;
         Button2->Enabled = true;
         Button1->Enabled = false;
         Button3->Enabled = true;
         Timer2->Enabled = true;
-        PaintBox1->Canvas->Pen->Color = clBlack;
-        PaintBox1->Canvas->Brush->Color = clBlack;
-        PaintBox1->Canvas->Brush->Style = bsCross;
-        PaintBox1->Canvas->Rectangle(0, 0, PaintBox1->Width, PaintBox1->Height);
+        if(flag == 0){
+                PaintBox1->Canvas->Pen->Color = clBlack;
+                PaintBox1->Canvas->Brush->Color = clBlack;
+                PaintBox1->Canvas->Brush->Style = bsCross;
+                PaintBox1->Canvas->Rectangle(0, 0, PaintBox1->Width, PaintBox1->Height);
 
-}
-//---------------------------------------------------------------------------
-
-
-
-
-void __fastcall TForm1::PaintBox1Click(TObject *Sender)
-{
-        //PaintBox1->Canvas->Pen->Color = clBlack;
-        //PaintBox1->Canvas->Brush->Color = clBlack;
-        //PaintBox1->Canvas->Brush->Style = bsCross;
-        //PaintBox1->Canvas->Rectangle(0, 0, PaintBox1->Width, PaintBox1->Height);
+        }
+        flag++;
 }
 //---------------------------------------------------------------------------
 
@@ -96,4 +86,10 @@ void __fastcall TForm1::Button3Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+
+void __fastcall TForm1::Timer1Timer(TObject *Sender)
+{
+        Edit1->Text = DateToStr(Date()) + ", " + TimeToStr(Time());
+}
+//---------------------------------------------------------------------------
 

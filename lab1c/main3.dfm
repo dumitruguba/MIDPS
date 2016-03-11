@@ -18,7 +18,6 @@ object Form1: TForm1
     Top = 134
     Width = 195
     Height = 195
-    OnClick = PaintBox1Click
   end
   object Label1: TLabel
     Left = 280
@@ -92,6 +91,7 @@ object Form1: TForm1
     Text = 'Edit1'
   end
   object Timer1: TTimer
+    OnTimer = Timer1Timer
     Left = 64
     Top = 56
   end
