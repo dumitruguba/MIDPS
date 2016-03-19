@@ -4,7 +4,7 @@
 
 ####Program 1a
 
-Am avut de creat o forma folosind: 3 butoane (2-pentru incrementare, decrementare unei variabile intregi "i" si al 3-lea pentru iesirea din program),
+Am avut de creat o forma folosind: 3 butoane (2-pentru incrementarea, decrementarea unei variabile intregi "i" si al 3-lea pentru iesirea din program),
 un edit box - in care va fi afisata valoarea variabilei "i" si 2 etichete(una pentru afisarea unui text static, cealalta pentru afisarea starii variabilei "i"). 
 
 ####Program 1b
