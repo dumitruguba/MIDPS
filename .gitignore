@@ -1,0 +1,11 @@
+
+#C++ Builder
+
+*.~bpr
+*.~ddp
+*.~dfm
+*.~cpp
+*.~h
+*.obj
+*.exe
+
