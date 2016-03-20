@@ -11,6 +11,8 @@
 #Java
 *.classpath
 *.project
+**/bin
+**/.settings
 
 
 
