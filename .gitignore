@@ -9,8 +9,8 @@
 *.exe
 
 #Java
-bin/
-.settings/
+**/bin
+**/.settings
 *.classpath
 *.project
 
