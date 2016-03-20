@@ -27,14 +27,15 @@ public class calculator_ui implements ActionListener {
 	JButton butmulti = new JButton("*");
 	JButton butdiv = new JButton("/");
 	JButton butpow = new JButton("^");
-	JButton butsqrt = new JButton("sqrt");
+	JButton butsqrt = new JButton("√");
+	JButton butinv = new JButton("+/-");
 	JButton buteq = new JButton("=");
 	JButton butclear = new JButton("C");
 	JButton butpoint = new JButton(".");
 	
 	public void ui(){
 		frame.setVisible(true);
-		frame.setSize(250, 200);
+		frame.setSize(220, 230);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		frame.add(panel);
@@ -58,6 +59,7 @@ public class calculator_ui implements ActionListener {
 		panel.add(butdiv);
 		panel.add(butpow);
 		panel.add(butsqrt);
+		panel.add(butinv);
 		panel.add(butpoint);
 		panel.add(buteq);
 		panel.add(butclear);
@@ -78,6 +80,7 @@ public class calculator_ui implements ActionListener {
 		butdiv.addActionListener(this);
 		butpow.addActionListener(this);
 		butsqrt.addActionListener(this);
+		butinv.addActionListener(this);
 		butpoint.addActionListener(this);
 		buteq.addActionListener(this);
 		butclear.addActionListener(this);
@@ -86,7 +89,7 @@ public class calculator_ui implements ActionListener {
 
 	String str, text_area;
 	Double rez = 0.0, nr1, nr2;
-	int addclc=0, subclc=0, multiclc=0, divclc=0, powclc=0, sqrtclc=0, k=0;
+	int addclc=0, subclc=0, multiclc=0, divclc=0, powclc=0, sqrtclc=0, invclc=0, k=0;
 	int rez_i = 0;
 	
 	public void actionPerformed(ActionEvent e) {
@@ -123,9 +126,9 @@ public class calculator_ui implements ActionListener {
 		if(source==but0){
 			text.append("0");
 		}
-		if(source==butadd || source==butsub || source==butmulti || source==butdiv || source==butpow || source==butsqrt){
+		if(source==butadd || source==butsub || source==butmulti || source==butdiv || source==butpow || source==butsqrt || source==butinv){
 			str = text.getText();
-			if((addclc==0 && subclc==0 && multiclc==0 && divclc==0 && powclc==0 && sqrtclc==0))
+			if((addclc==0 && subclc==0 && multiclc==0 && divclc==0 && powclc==0 && sqrtclc==0 && invclc==0))
 				nr1 = Double.parseDouble(str);
 			if(source==butadd){
 				addclc=1;
@@ -135,6 +138,7 @@ public class calculator_ui implements ActionListener {
 				divclc=0;
 				powclc=0;
 				sqrtclc=0;
+				invclc=0;
 				text.setText("");
 				text.append(String.valueOf(nr1)+"+");
 			}
@@ -146,6 +150,7 @@ public class calculator_ui implements ActionListener {
 				divclc=0;
 				powclc=0;
 				sqrtclc=0;
+				invclc=0;
 				text.setText("");
 				text.append(String.valueOf(nr1)+"-");
 			}
@@ -157,6 +162,7 @@ public class calculator_ui implements ActionListener {
 				divclc=0;
 				powclc=0;
 				sqrtclc=0;
+				invclc=0;
 				text.setText("");
 				text.append(String.valueOf(nr1)+"*");
 			}
@@ -168,6 +174,7 @@ public class calculator_ui implements ActionListener {
 				addclc=0;
 				powclc=0;
 				sqrtclc=0;
+				invclc=0;
 				text.setText("");
 				text.append(String.valueOf(nr1)+"/");
 			}
@@ -179,6 +186,7 @@ public class calculator_ui implements ActionListener {
 				addclc=0;
 				powclc=1;
 				sqrtclc=0;
+				invclc=0;
 				text.setText("");
 				text.append(String.valueOf(nr1)+"^");
 			}
@@ -190,6 +198,19 @@ public class calculator_ui implements ActionListener {
 				addclc=0;
 				powclc=0;
 				sqrtclc=1;
+				invclc=0;
+				text.setText("");
+				text.append(String.valueOf(nr1));
+			}
+			else if(source==butinv){
+				divclc=0;
+				//text.append("");
+				subclc=0;
+				multiclc=0;
+				addclc=0;
+				powclc=0;
+				sqrtclc=0;
+				invclc=1;
 				text.setText("");
 				text.append(String.valueOf(nr1));
 			}
@@ -204,7 +225,7 @@ public class calculator_ui implements ActionListener {
 				if(chr_arr[i] == '+' || chr_arr[i] == '-' || chr_arr[i] == '*' || chr_arr[i] == '/' || chr_arr[i] == '^')
 					k=i;
 			}
-			if(sqrtclc ==0){
+			if(sqrtclc ==0 && invclc==0){
 				for(int j=0; j<=k; j++)
 					chr_arr[j] = '0';
 				nr2 = Double.parseDouble(String.valueOf(chr_arr));
@@ -218,12 +239,14 @@ public class calculator_ui implements ActionListener {
 				rez = nr1 * nr2;
 			else if(divclc != 0 )
 				rez = nr1 / nr2;
-			else if(powclc != 0 ){
+			else if(powclc != 0 )
 				rez = Math.pow(nr1, nr2);
-			}
-			else if(sqrtclc != 0 ){
+			else if(sqrtclc != 0 )
 				rez = Math.sqrt(nr1);
+			else if(invclc != 0 ){
+					rez = -nr1;
 			}
+			
 			if(rez%2 == 1 || rez%2 == 0){
 				rez_i = rez.intValue();
 				text.setText("");
@@ -242,7 +265,7 @@ public class calculator_ui implements ActionListener {
 		}
 		if(source==butclear){
 			text.setText("");
-			addclc=0; subclc=0; multiclc=0; divclc=0; powclc=0; sqrtclc=0;
+			addclc=0; subclc=0; multiclc=0; divclc=0; powclc=0; sqrtclc=0; invclc=0;
 			nr1=0.0; nr2=0.0;
 		}
 	}
