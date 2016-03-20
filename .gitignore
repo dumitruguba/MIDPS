@@ -1,6 +1,5 @@
 
 #C++ Builder
-
 *.~bpr
 *.~ddp
 *.~dfm
@@ -8,4 +7,11 @@
 *.~h
 *.obj
 *.exe
+
+#Java
+bin/
+.settings/
+*.classpath
+*.project
+
 
