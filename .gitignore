@@ -10,7 +10,8 @@
 
 #Java
 **/bin
+**/.settings
 *.classpath
-*.project
+
 
 
