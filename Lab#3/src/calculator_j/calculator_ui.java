@@ -138,6 +138,7 @@ public class calculator_ui implements ActionListener {
 		}
 		if(source==butadd || source==butsub || source==butmulti || source==butdiv || source==butpow || source==butsqrt || source==butinv){
 			str = text.getText();
+			flagpoint = 0;
 			
 			if(starecf == 1){		
 				if((addclc==0 && subclc==0 && multiclc==0 && divclc==0 && powclc==0 && sqrtclc==0 && invclc==0))
@@ -238,6 +239,7 @@ public class calculator_ui implements ActionListener {
 			flagpoint = 1;
 		}
 		if(source==buteq){
+			flagpoint = 1;
 			text_area = text.getText();
 			char[] chr_arr = text_area.toCharArray();
 			if(starecf == 1){
