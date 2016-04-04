@@ -1,0 +1,76 @@
+body{
+	background: white;
+	font-family: "Calibri";
+	margin: 0px;
+    padding: 0px;
+}
+
+.hala{
+	color:#003d99;
+	font-weight:bold;
+	font-size: 20;
+}
+
+.10ch{
+    border-radius: 50%;
+}
+
+.container {
+	width:1300px;
+	background-color:#FFF;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.navigation {
+	font-family: "Calibri";
+	float:right;
+	margin-top:35px;
+	margin-right:20px;
+}
+
+.maincontent {
+	font-family: "Arial";
+	width:1000px;
+	padding:80px;
+}
+
+.item {
+	width: 120px;
+	height:0px;
+	margin-left:40px;
+	margin-right:40px;
+	margin-bottom:30px;
+	float:left;
+}
+
+.description{
+	width: 1000px;
+	height:0px;
+	margin-left:40px;
+	margin-right:40px;
+	margin-bottom:30px;
+	float:left;
+}
+
+.news {
+	width: 200px;
+	height:0px;
+	margin-left:40px;
+	margin-right:40px;
+	margin-bottom:30px;
+	float:left;
+}
+
+.trophy {
+	width: 1000px;
+	height:0px;
+	margin-left:40px;
+	margin-right:40px;
+	margin-bottom:30px;
+	float:left;
+}
+
+h3 span{
+	background-color:rgb(235,235,235);
+}
