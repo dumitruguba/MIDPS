@@ -1,0 +1,35 @@
+.root {
+     -fx-background-image: url("background.jpg");
+}
+
+.label {
+	-fx-font-size: 15px;
+	-fx-font-weight: bold;
+	-fx-text-fill: #b22222;
+	-fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+
+.button {
+	-fx-text-fill: #d3d3d3;
+	-fx-font-weight: bold;
+	-fx-background-color: linear-gradient(#7b68ee, #4b0082);
+	-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(#4b0082, #7b68ee);
+}
+
+#welcome {
+   -fx-font-size: 30px;
+   -fx-font-family: "Arial Black";
+   -fx-fill: #818181;
+   -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+}
+
+#user, #pass {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-fill: #595959;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}

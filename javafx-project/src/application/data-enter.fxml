@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="295.0" prefWidth="455.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text fx:id="fname" layoutX="36.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name:" />
+      <Text fx:id="lname" layoutX="38.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name:" />
+      <Text fx:id="email" layoutX="68.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" />
+      <Text fx:id="region" layoutX="60.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Region:" />
+      <Text fx:id="age" layoutX="81.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age:" />
+      <Text fx:id="sex" layoutX="46.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sex(M/F):" />
+   </children>
+</Pane>

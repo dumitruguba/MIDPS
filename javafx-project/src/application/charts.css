@@ -1,0 +1,17 @@
+.root {
+     -fx-background-color: white;
+}
+
+.chart-pie-label-line {
+    -fx-stroke: #4d4d4d;
+    -fx-fill: #4d4d4d;
+}
+ 
+.chart-pie-label {
+    -fx-fill: #4d4d4d;
+    -fx-font-size: 1em;
+} 
+.chart-legend {
+   -fx-background-color: #cccccc;
+}
+
